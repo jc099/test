@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+
+<div class="card text-center">
+    <div class="card-body">
+        <h3 class="card-title">Listado de Participantes 5 Km - Masculino - Juniors 19 a 18 años</h3>
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+               <th>Nombre y Apellido</th>
+               <th>Provincia</th>
+               <th>Ciudad</th>
+               <th>Categoria</th>
+               <th>Distancia</th>
+           </tr>
+       </thead>
+       <tbody>
+           {% for participante in participantes %}
+                <tr>
+                    <td>{{participante[1] }}</td>
+                    <td>{{participante[21] }}</td>
+                    <td>{{participante[18] }}</td>
+                    <td>{{participante[13] }}</td>
+                    <td>{{participante[15] }}</td>
+                </tr>
+            {% endfor %}
+       </tbody>
+   </table>
+{% include 'footer.html' %}

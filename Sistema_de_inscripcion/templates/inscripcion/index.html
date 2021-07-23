@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>Running.ar</title>
+  </head>
+  <body>
+  <!--========================================================== -->
+                        <!-- ENCABEZADO -->
+  <!--========================================================== -->
+    <header class="container-fluid bg-secondary d-flex justify-content-center">
+        <p class="text-light mb-0 p-2 fs-6">Contactanos 2395 492812</p>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+    </header>
+
+    <nav  class="navbar navbar-expand-lg navbar-light p-3"  id="menu">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+              <span class="fs-4 text-secondary fw-bold">Running.AR</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">
+                  <span class="fs-6 fw-bold">Inicio</span>
+                </a>
+              </li>
+              <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fs-6 fw-bold">Inscripciones</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="http://127.0.0.1:5000/logueo"><span class="fs-6 fw-bold">PRE-Inscripciones</span></a>
+                  <a class="dropdown-item" href="http://127.0.0.1:5000/listado"><span class="fs-6 fw-bold">Listado de Participantes</span></a>
+                  <a class="dropdown-item" href="http://127.0.0.1:5000/busqueda"><span class="fs-6 fw-bold">Listado Por Categorias y Distancias</span></a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a><span class="fs-6 fw-bold">Informacion</span></a>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#info"><span class="fs-6 fw-bold">Info de Carrera</span></a></a>
+                  <a class="dropdown-item" href="#reglamento"><span class="fs-6 fw-bold">Reglamento</span></a></a>
+                  <a class="dropdown-item" href="#ediant"><span class="fs-6 fw-bold">Ediciones Anteriores</span></a></a>
+                  <a class="dropdown-item" href="http://127.0.0.1:5000/busqueda"><span class="fs-6 fw-bold">Sponsor</span></a></a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!--========================================================== -->
+                        <!-- SLIDER DE IMAGENES-->
+    <!--========================================================== -->
+   
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="./img/slide1.jpg" class="d-block w-100" alt="">
+          </div>
+          
+ 
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./img/slide2.jpg" class="d-block w-100" alt="...">
+          </div>
+ 
+
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
+          </div>
+ 
+ 
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>    
+    
+<!--========================================================== -->
+                        <!-- SECCION INFO MARATON-->
+<!--========================================================== -->
+
+<section>
+    <div class="container w-50 m-auto text-center" id="info">
+        <h1 class="mb-5 fs-2">Maraton 2022 <span class="text-primary">Running.ar 42 KM</span>.</h1>
+        <p class="fs-4 ">Es una carrera de larga distancia que consiste en recorrer una distancia de 42 195 metros (42,195 km). Forma parte del programa de atletismo en los Juegos Olímpicos desde Atenas 1896, en la categoría masculina, y desde Los Ángeles 1984, en la categoría femenina. En la Olimpiada de 1908 fue cambiada la distancia de los 40kms a 42.195kms, ya que la Reina quería que pasara frente al Palacio Real. </p>
+    </div>
+
+    <div class="mt-5 text-center">
+        <img id="img-equipo" src="./img/equipo.jpg" alt="info">
+    </div>
+</section>
+
+
+<!--========================================================== -->
+                        <!-- SECCION REGLAMENTO-->
+<!--========================================================== -->
+
+
+<section>
+  <div class="container w-50 m-auto text-center" id="reglamento">
+      <h1 class="mb-5 fs-2">Maraton 2022 -<span class="text-danger">REGLAMENTO</span>.</h1>
+      <p class="fs-4 ">
+
+        El Maratón se realizará bajo las condiciones climáticas que les permita a los participantes correr en condiciones seguras. La organización tiene la atribución de cancelar total o parcialmente la prueba si considera que esas condiciones exceden los umbrales estipulados. Y también, en caso de cualquier otra contingencia (incluyendo climáticas) que coloque en riesgo a los participantes. De acuerdo a decisión del Gobierno de la Ciudad de Buenos Aires y/o Defensa Civil, el comité organizador puede determinar la postergación de la prueba y/o aplicar el procedimiento establecido en el apartado “6” del presente.
+        2.A Pueden participar atletas que tengan, al menos, 18 años cumplidos al día de la prueba.
+        2.B La competencia se desarrolla de acuerdo a los reglamentos en vigencia de la Federación Internacional de Atletismo (IAAF) y sus ámbitos de aplicación: Confederación Sudamericana de Atletismo (Consudatle), Confederación Argentina de Atletismo (CADA) y Federación Atlética Metropolitana (FAM).
+        2.C Es obligatorio el uso del número oficial asignado por la organización en la remera del participante, desde el momento de la largada hasta retirarse de la zona de llegada. No está permitido el cambio de números entre atletas.
+        2.D Zona de largada. Cada atleta deberá respetar el sector de ingreso al cual es asignado y asegurar su llegada con el tiempo suficiente.
+        2.E Acompañantes. No se permite que, a lo largo del recorrido, los atletas estén acompañados o aconsejados desde bicicletas u otros medios de movilidad.
+        2.F Quedan prohibida la práctica de cualquier disciplina ajena al atletismo incluyendo, pero no limitándose, a: patinaje con cualquier tipo de patín, skate, patineta, monopatín o dispositivo similar; ciclismo incluyendo todas sus especialidades, todos los tipos de bicicleta y vehículos de locomoción afines, con una dos o más ruedas, con propulsión a pedal, directa o indirecta. Se considera que cualquiera de las prácticas prohibidas pone en riesgo a la integridad física de los atletas participantes, y para el normal desarrollo del Maratón.
+        2.G El incumplimiento de estas normas es pasible de descalificación. La organización se reserva el derecho de sancionar a todo participante cuya actitud sea juzgada como contraria al espíritu deportivo, deshonestas, y a quienes tengan conductas inapropiadas referentes a los jueces de la prueba.
+       
+      </p>
+  </div>
+</section>
+
+<!--========================================================== -->
+                        <!-- SECCION Ediciones Anteriores-->
+<!--========================================================== -->
+
+<section>
+  <div class="container w-50 m-auto text-center" id="ediant">
+      <h1 class="mb-5 fs-2"><span class="text-primary">Ediciones Anteriores.</span></h1>
+      <p class="fs-4 ">Edicion 2020</p>
+      <p class="fs-4 ">Edicion 2019</p>
+      <p class="fs-4 ">Edicion 2018</p>
+      <p class="fs-4 ">Edicion 2017</p>
+  </div>
+
+  <div class="mt-5 text-center">
+      <img id="img-equipo" src="./img/equipo.jpg" alt="info">
+  </div>
+</section>
+
+<!--========================================================== -->
+                        <!--FOOTER-->
+<!--========================================================== -->
+
+
+<footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
+  <p class="fs-5 px-3  pt-3">Running.AR &copy; Todos Los Derechos Reservados 2021</p>
+  <div id="iconos" >
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-whatsapp"></i></a>   
+  </div>
+</footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %}
+
+    {% if messages %}
+        <div class="alert alert-dark" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endwith %}
+
+    <a href="http://wwwl.google.com" class="btn btn-primary">Volver al Inicio</a>
+
+{% include 'footer.html' %}

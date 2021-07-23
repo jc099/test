@@ -1,0 +1,184 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %}
+
+    {% if messages %}
+        <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endwith %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cludflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<form method="post" action="/store" enctype="multipart/form-data">
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h2 class="card-title">Datos Personales</h2>
+            <p class="card-text">
+                <br>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="txtNombre">Nombre y Apellido</label>
+                        <input type="text" class="form-control" id="TxtNombre" placeholder="Ingrese Nombre y Apellido" name="txtNombre">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="txtDni">DNI</label>
+                        <input type=text" class="form-control" id="txtDni" placeholder="12345678" name="txtDni">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="txtFecnac">Fecha de Nacimiento</label>
+                        <input type=text" class="form-control" id="txtFecnac" placeholder="01/01/2000" name="txtFecnac">
+                    </div>
+                    <div class="form-group col-md-10">
+                        <label for="txtCorreo">Correo Electronico</label>
+                        <input type=text" class="form-control" id="txtCorreo" placeholder="ej.:juanperez@gmail.com" name="txtCorreo">
+                    </div>
+                </div>
+                <div class="container">
+                    <h1 align="left"></h1>       
+                    <div class="row">
+                        <div class="col-md-5">
+                            <select name="provincia" data-live-search="true" id="provincia" class="form-control" title="Seleccione Provincia"> 
+                                {% for j in provs %}
+                                    <OPTION value={{j[0]}}>{{j[1]}}</OPTION>
+                                {% endfor %}
+                            </select>
+                        </div>                
+                        <div class="col-md-5">
+                            <select name="localidad" value= localidad data-live-search="true" id="localidad" class="form-control" title="Seleccione Ciudad"> </select>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                    $("#provincia").selectpicker();
+                    $("#localidad").selectpicker();
+                    function load_data(type, prov_id) {
+                    $.ajax({
+                    url: "/ciudad",
+                    method: "POST",
+                    data: { type: type, prov_id: prov_id },
+                    dataType: "json",
+                    success: function (data) { //alert(prov_id)
+                        var html = "";
+                        for (var count = 0; count < data.length; count++) {html += '<option value="' + data[count].id + '">' + data[count].name + "</option>";}
+                        if (type == "carData") {
+                            $("#provincia").html(html);
+                            $("#provincia").selectpicker("refresh");
+                        } else {
+                            $("#localidad").html(html);
+                            $("#localidad").selectpicker("refresh");
+                            }
+                        },
+                    });
+                    }
+                    $(document).on("change", "#provincia", function () {
+                    var prov_id = $("#provincia").val();
+                    load_data("ciudad", prov_id);
+                    });
+                });
+            </script>
+            <br>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="txtDireccion">Direccion</label>
+                    <input type=text" class="form-control" id="txtDireccion" placeholder="ingrese direccion" name="txtDireccion">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtCelular">Telefono</label>
+                    <input type="text" class="form-control" id="TxtCelular" placeholder="ingrese nro telefono" name="txtCelular">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtCelular2">Telefono Alternativo</label>
+                    <input type="text" class="form-control" id="TxtCelular2" placeholder="ingrese nro telefono" name="txtCelular2">
+                </div>            
+            </div>            
+        </div>
+        <br>
+        <div class=" text-center">
+            <div class="card-body">
+                <h3 class="card-title">Datos de Carrera</h3>
+                <p class="card-text">
+                <div class="form-row">
+                    <div class="container">
+                        <h1 align="left"></h1>       
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Categoria">Categoria</label>
+                                <select name="categoria" value= categoria data-live-search="true" id="categoria" class="form-control" title="Seleccione">
+                                    {% for c in categorias %}
+                                        <OPTION value={{c[0]}}>{{c[1]}}</OPTION>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="Categoria">Distancia</label>
+                                <select name="distancia" value= distancia data-live-search="true" id="distancia" class="form-control" title="Seleccione">
+                                    {% for d in distancias %}
+                                        <OPTION value={{d[0]}}>{{d[1]}}</OPTION>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="Talle">Talle</label>
+                                <select name="talle" value= talle data-live-search="true" id="talle" class="form-control" title="Seleccione">
+                                    {% for t in talles %}
+                                        <OPTION value={{t[0]}}>{{t[1]}}</OPTION>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    <br> 
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Guardar
+  </button>
+  <a href="https://www.google.com/" class="btn btn-primary">Regresar</a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Guardar Registro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Desea confirmar su registro?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Agregar">
+        
+    </div> -->
+    
+</form>
+{% include 'footer.html' %}
